@@ -57,27 +57,53 @@ To install Wireshark, download the appropriate installer for your operating syst
 
 <p>
 
+![image](https://github.com/ijoshua932/azure-network-protocols/assets/139269375/eab133da-405d-4397-8de3-d1c6c8576bc7)
+
+![image](https://github.com/ijoshua932/azure-network-protocols/assets/139269375/64ddb5bd-ad38-47d8-b142-6c7f04417b73)
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-
-
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To ping and observe ICMP traffic between two VMs, first, ensure that both VMs are running on the same network or virtual network within Azure. Open Comand Prompt or PowerShell on one VM, use the "ping" command followed by the IP address or hostname of the other VM to send ICMP packets. On the destination VM, use tools like Wireshark to capture and analyze the incoming ICMP traffic.
 </p>
 <br />
 
 <p>
 
+![image](https://github.com/ijoshua932/azure-network-protocols/assets/139269375/50d5190d-a7bf-4944-ab86-95f082668584)
+
+![image](https://github.com/ijoshua932/azure-network-protocols/assets/139269375/e2256975-165c-4021-9f97-a103d9aaad36)
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+When the inbound Network Security Group (NSG) is changed to deny ICMP traffic, the ping command between two VMs will be interrupted. This is because ICMP traffic will be blocked at the network level, preventing the VMs from exchanging ICMP echo requests and replies. As a result, the ping command will show no responses or timeouts, indicating the communication is blocked by the NSG rules.
+</p>
+<br />
+
+<p>
+
+![image](https://github.com/ijoshua932/azure-network-protocols/assets/139269375/2a98e6bf-045e-47dd-9568-08eb44f061e3)
+</p>
+<p>
+Reversing the Network Security Group (NSG) rule to allow ICMP traffic, restores the ability to use the ping command between the two VMs. By changing the rule to permit ICMP traffic, the NSG allows the necessary ICMP echo requests and replies to pass through the network, enabling the VMs to communicate with each other using the ping command again.
+</p>
+<br />
+
+<p>
+
+![image](https://github.com/ijoshua932/azure-network-protocols/assets/139269375/97348836-93b5-4a49-abe8-5616e7d64e47)
+
+</p>
+<p>
+To observe DNS traffic of www.google.com, filter the captured packets by DNS protocol, and then access www.google.com in your web browser or use the "nslookup" command in the command prompt to generate DNS traffic for google.com. Wireshark will display the captured DNS packets related to the communication with www.google.com.
+</p>
+<br />
+
+<p>
+  
+![image](https://github.com/ijoshua932/azure-network-protocols/assets/139269375/14f59c9f-f3ab-43c2-8298-1ae7860a810b)
+
+</p>
+<p>
+To observe DNS traffic of www.disney.com, filter the captured packets by DNS protocol, and then access www.disney.com in your web browser or use the "nslookup" command in the command prompt or terminal to generate DNS traffic for www.disney.com. Wireshark will display the captured DNS packets related to the communication with google.com.
 </p>
 <br />
